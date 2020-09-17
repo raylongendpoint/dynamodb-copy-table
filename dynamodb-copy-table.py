@@ -89,6 +89,7 @@ for item in logs.scan():
     try:
         new_logs.use_boolean()
         new_logs.put_item(new_item, overwrite=True)
+        print("Putting item: %s" % new_item)
     except ValidationException:
         print(dst_table, new_item)
     except JSONResponseError:
